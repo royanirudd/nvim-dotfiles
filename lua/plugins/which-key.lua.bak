@@ -1,0 +1,36 @@
+-- File: ~/new-nvim-config/lua/plugins/which-key.lua
+return {
+	"folke/which-key.nvim",
+	event = "VeryLazy", -- Use "VeryLazy" to delay loading until needed
+	opts = {
+		-- Place your optional settings here
+		-- Example:
+		-- window = {
+		--   border = "single",
+		-- },
+	},
+	keys = {
+		{
+			"<leader>?",
+			function()
+				require("which-key").show({ mode = "n", global = false })
+			end,
+			desc = "Buffer Local Keymaps (which-key)",
+		},
+	},
+	config = function(_, opts)
+		local wk = require("which-key")
+		wk.setup(opts)
+
+		-- Register custom key groups
+		wk.register({
+			["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
+			["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
+			["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
+			["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
+			["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
+			["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
+			["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
+		})
+	end,
+}
