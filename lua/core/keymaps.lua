@@ -45,5 +45,3 @@ vim.keymap.set("n", "<leader>cc", ":ClipboardClear<CR>", { desc = "[C]lipboard [
 
 -- Tabs
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { desc = "new [T]ab" })
-
-vim.keymap.set("n", "<leader>ut", require("config.theme").toggle_theme, { desc = "[U]I: Toggle [T]heme" })
