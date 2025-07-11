@@ -19,25 +19,12 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
--- DAP key mappings
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>dr", "<cmd>DapContinue<CR>", opts)
-
 -- Terminal keybinds
 vim.api.nvim_set_keymap("n", "<C-\\>", ":vsplit | terminal<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-\\>", "<C-o>:vsplit | terminal<CR>", { noremap = true, silent = true })
 
--- vim-latex pdflatex
-vim.api.nvim_set_keymap(
-	"n",
-	"<leader>ll",
-	":!pdflatex -interaction=nonstopmode %<CR>",
-	{ noremap = true, silent = false }
-)
-
 -- Noice
-vim.keymap.set("n", "<leader>Z", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
+-- vim.keymap.set("n", "<leader>Z", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
 
 -- Clipboard History
 vim.keymap.set("n", "<leader>ch", ":ClipboardHistory<CR>", { desc = "[C]lipboard [H]istory" })
@@ -45,3 +32,21 @@ vim.keymap.set("n", "<leader>cc", ":ClipboardClear<CR>", { desc = "[C]lipboard [
 
 -- Tabs
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { desc = "new [T]ab" })
+
+-- USEFUL CUSTOMS
+vim.keymap.set("n", "Y", "y$", { desc = "Tank to end of line " })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save current file" })
+vim.keymap.set("n", "<leader>d", "dd", { desc = "Delete current line" })
+-- Move line up and down
+vim.keymap.set("n", "<C-j>", ":m .+1<CR>==", { desc = "Move line down" })
+vim.keymap.set("n", "<C-k>", ":m .-2<CR>==", { desc = "Move line up" })
+vim.keymap.set("v", "<C-j>", ":m  '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "<C-k>", ":m  '<-2<CR>gv=gv", { desc = "Move selection down" })
+--Better indentation
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+--Keep serach itterating words to center
+vim.keymap.set("n", "N", "nzzzv", { desc = "Center next search" })
+-- Some undoing improvements with feedback
+vim.keymap.set("n", "u", "u<CR>:echo 'Undoing...'<CR>", { desc = "Undo with feedback" })
+vim.keymap.set("n", "<C-r>", "<C-r><CR>:echo 'Redoing...'<CR>", { desc = "Redo with feedback" })

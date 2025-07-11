@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+
 vim.g.maplocalleader = " "
 
 -- see: https://github.com/folke/lazy.nvim

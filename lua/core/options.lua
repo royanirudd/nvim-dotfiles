@@ -16,6 +16,11 @@ vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
 
+-- Set tab width to 2 spaces
+vim.opt.tabstop = 2 -- Number of visual spaces per tab
+vim.opt.shiftwidth = 2 -- Number of spaces to use for auto-indentation
+vim.opt.expandtab = true -- Convert tabs to spaces
+
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -41,7 +46,7 @@ vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "· ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
