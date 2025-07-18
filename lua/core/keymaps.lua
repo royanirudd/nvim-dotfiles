@@ -30,6 +30,56 @@ vim.api.nvim_set_keymap("i", "<C-\\>", "<C-o>:vsplit | terminal<CR>", { noremap 
 vim.keymap.set("n", "<leader>ch", ":ClipboardHistory<CR>", { desc = "[C]lipboard [H]istory" })
 vim.keymap.set("n", "<leader>cc", ":ClipboardClear<CR>", { desc = "[C]lipboard [C]lear" })
 
+-- Telekasten keymaps
+vim.keymap.set(
+	"n",
+	"<leader>zn",
+	":Telekasten new_templated_note<CR>",
+	{ noremap = true, silent = true, desc = "Zettel: New note from template" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>zl",
+	"<cmd>Telekasten insert_link<CR>",
+	{ noremap = true, silent = true, desc = "Zettel: Insert link" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>zf",
+	"<cmd>Telekasten follow_link<CR>",
+	{ noremap = true, silent = true, desc = "Zettel: Follow link under cursor" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>zo",
+	"<cmd>Telekasten find_notes<CR>",
+	{ noremap = true, silent = true, desc = "Zettel: Open note by title" }
+)
+
+-- Search note content (grep). 'g' for 'grep'.
+vim.keymap.set(
+	"n",
+	"<leader>zg",
+	"<cmd>Telekasten search_notes<CR>",
+	{ noremap = true, silent = true, desc = "Zettel: Grep/Search in all notes" }
+)
+
+-- Show all tags and find notes by tag. 't' for 'tags'.
+vim.keymap.set(
+	"n",
+	"<leader>zt",
+	"<cmd>Telekasten show_tags<CR>",
+	{ noremap = true, silent = true, desc = "Zettel: Find notes by tag" }
+)
+
+-- Show backlinks for the current note. 'b' for 'backlinks'.
+vim.keymap.set(
+	"n",
+	"<leader>zb",
+	"<cmd>Telekasten show_backlinks<CR>",
+	{ noremap = true, silent = true, desc = "Zettel: Show backlinks" }
+)
+
 -- Tabs
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { desc = "new [T]ab" })
 
