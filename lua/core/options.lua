@@ -56,3 +56,13 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Set browser to firefox based on script written
+-- Set netrw to use openlink
+vim.g.netrw_browsex_viewer = "openlink"
+
+-- Override vim.ui.open to use openlink directly
+vim.ui.open = function(uri)
+	local cmd = { "openlink", uri }
+	vim.fn.jobstart(cmd, { detach = true })
+end

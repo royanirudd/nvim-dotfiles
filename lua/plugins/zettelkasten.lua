@@ -4,10 +4,11 @@ return {
 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 
 	lazy = true,
+	cmd = "Telekasten",
+
 	---@type telekasten.Config
 	opts = {
-		filetype_ft = "telekasten.markdown",
-
+		auto_set_filetype = false,
 		extras = {
 			"graph",
 		},
