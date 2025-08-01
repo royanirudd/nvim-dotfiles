@@ -20,8 +20,11 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Terminal keybinds
-vim.api.nvim_set_keymap("n", "<C-\\>", ":vsplit | terminal<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-\\>", "<C-o>:vsplit | terminal<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-\\>", ":hsplit | terminal<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-\\>", "<C-o>:hsplit | terminal<CR>", { noremap = true, silent = true })
+
+-- Debugger keybinds
+-- Refer to lua/plugins/dap-ui.lua for keymaps
 
 -- Noice
 -- vim.keymap.set("n", "<leader>Z", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
